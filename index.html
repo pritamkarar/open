@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirect</title>
     <style>
       body {
@@ -45,13 +43,14 @@
           l
         )
       ) {
-        var t = window.open(l, "_blank");
-        if (p == "true")
-          t = window.open(
-            l,
-            "page",
-            "width=1000,height=800,scrollbars=yes,resizable=yes"
-          );
+        var t =
+          p == "true"
+            ? (t = window.open(
+                l,
+                "page",
+                "width=1000,height=800,scrollbars=yes,resizable=yes"
+              ))
+            : window.open(l, "_blank");
         if (t === null || typeof t === "undefined") {
           document.querySelector(".container").style.display = "block";
           alert("Popup was blocked! Please enable pop-ups for this site.");
