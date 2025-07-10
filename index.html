@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirect</title>
+    <title>Redirect</title>    
+  </head>
+  <body>
+    <a id="btn" href="" target="_blank" tabindex="-1"></a>
     <script>
       const u = new URLSearchParams(window.location.search);
       const l = u.get("r");
@@ -33,8 +36,5 @@
         );
       }
     </script>
-  </head>
-  <body>
-    <a id="btn" href="" target="_blank" tabindex="-1"></a>
   </body>
 </html>
