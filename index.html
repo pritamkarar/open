@@ -5,9 +5,8 @@
   if (l !== null && l !== "" && /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/.test(l)) {    
     var t = window.open(l, "_blank");
     if (p == "true") t = window.open(l, "page", "width=1000,height=800,scrollbars=yes,resizable=yes");
-    if (t === null || typeof t === "undefined") {
-      alert("Popup was blocked! Please enable pop-ups for this site.");
-
+    if (t === null || typeof t === "undefined") alert("Popup was blocked! Please enable pop-ups for this site.");
+    else {
       if (window.history.length <= 1) window.close();
       else history.back();
     }
