@@ -2,28 +2,14 @@
   const u = new URLSearchParams(window.location.search);
   const l = u.get("r");
   const p = u.get("w");
-  if (l !== null && l !== "" && /^https?:\/\//.test(l)) {
-    
-    const newTab = window.open(l, "_blank");
-    if (newTab === null || typeof newTab === "undefined") {
+  if (l !== null && l !== "" && /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/.test(l)) {    
+    var t = window.open(l, "_blank");
+    if (p == "true") t = window.open(l, "page", "width=1000,height=800,scrollbars=yes,resizable=yes");
+    if (t === null || typeof t === "undefined") {
       alert("Popup was blocked! Please enable pop-ups for this site.");
 
       if (window.history.length <= 1) window.close();
       else history.back();
     }
-  }
-  function t(h) {
-    Object.assign(document.createElement("a"), {
-      target: "_blank",
-      rel: "noopener noreferrer",
-      href: h,
-    }).click();
-  }
-  function w(h) {
-    window.open(
-      h,
-      "page",
-      "width=1000,height=800,scrollbars=yes,resizable=yes"
-    );
   }
 </script>
